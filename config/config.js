@@ -12,6 +12,11 @@ const production = {
 	database: process.env.DATABASE_NAME_TEST,
 	host: process.env.DATABASE_HOST,
 	dialect: process.env.DATABASE_DIALECT,
+	dialectOptions: {
+		ssl: {
+			rejectUnauthorized: true,
+		},
+	},
 };
 
 module.exports = {
