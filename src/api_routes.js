@@ -6,7 +6,7 @@ module.exports = async function (app) {
 	app.use(cors());
 
 	app.get('/', (req, res) => {
-		res.redirect('https://hxh-api.vercel.app/');
+		res.redirect('https://pami-dev.vercel.app/');
 	});
 
 	app.get('/api/v1', (req, res) => {
