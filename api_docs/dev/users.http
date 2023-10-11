@@ -1,0 +1,60 @@
+@hostname = http://localhost:4000/api/v1
+#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+#@hostname = https://hxh-api.cyclic.cloud/api/v1
+@endpoint = /users
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkzMDQ1MDczLCJleHAiOjE2OTMxMzE0NzN9.kmM5FVdDJm8H25Bh6dOKdAhaNpUraXjAsFVk1bEYH3U
+
+### GET ALL RESOURCE
+GET {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+### GET RESOURCE WITH FILTERS AND PAGINATION
+GET {{hostname}}{{endpoint}}?page=1&limit=2
+content-type: application/json
+Authorization: {{token}}
+
+### GET SINGLE RESOURCE
+GET {{hostname}}{{endpoint}}/5
+content-type: application/json
+Authorization: {{token}}
+
+### ADD/STORE RESOURCE
+POST {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "first_name": "DEV",
+   "last_name": "DEV_2",
+   "email": "dev5@gmail.com",
+   "password": "password",
+   "role": "admin",
+   "images": [5]
+}
+
+### UPDATE RESOURCE
+PATCH {{hostname}}{{endpoint}}/64d6ffcd51403af1e30e7663
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "first_name": "DEV",
+   "last_name": "DEV_2",
+   "email": "dev2@gmail.com",
+   "role": "admin"
+}
+
+###
+PATCH {{hostname}}{{endpoint}}/7                   
+content-type: application/json
+Authorization: {{token}}
+
+{
+  "first_name": "eugene"
+}
+
+### DELETE RESOURCE
+DELETE {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+content-type: application/json
+Authorization: {{token}}
