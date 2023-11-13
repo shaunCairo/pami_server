@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
 				as: 'images',
 			});
 
-			this.belongsTo(models.Branch);
+			this.belongsTo(models.Branch, { constraints: false });
 		}
 
 		async comparePassword(candidatePassword, userPassword) {

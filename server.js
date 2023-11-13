@@ -11,16 +11,16 @@ process.on('uncaughtException', (err) => {
 });
 
 (async () => {
-	if (true) {
-		await db.User.sync({ alter: true });
-		await db.Image.sync({ alter: true });
-		await db.ImageAssociation.sync({ alter: true });
-		await db.GovPartner.sync({ alter: true });
-		await db.Hero.sync({ alter: true });
-		await db.Blog.sync({ alter: true });
-		await db.Branch.sync({ alter: true });
-		await db.Gallery.sync({ alter: true });
-		await db.Claim.sync({ alter: true });
+	if (process.env.NODE_ENV === 'development') {
+		//await db.User.sync({ alter: true });
+		// await db.Image.sync({ alter: true });
+		// await db.ImageAssociation.sync({ alter: true });
+		// await db.GovPartner.sync({ alter: true });
+		// await db.Hero.sync({ alter: true });
+		//await db.Blog.sync({ alter: true });
+		//await db.Branch.sync({ alter: true });
+		//await db.Gallery.sync({ alter: true });
+		// await db.Claim.sync({ alter: true });
 	}
 
 	const port = process.env.PORT || 5000;

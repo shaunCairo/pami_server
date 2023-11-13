@@ -24,13 +24,13 @@ POST {{hostname}}{{endpoint}}
 content-type: application/json
 Authorization: {{token}}
 
-# {
-#    "first_name": "DEV",
-#    "last_name": "DEV_2",
-#    "email": "dev@gmail.com",
-#    "password": "password",
-#    "role": "admin"
-# }
+{
+   "first_name": "DEV",
+   "last_name": "DEV_2",
+   "email": "dev@gmail.com",
+   "password": "password",
+   "role": "admin"
+}
 
 ### UPDATE RESOURCE
 PATCH {{hostname}}{{endpoint}}/64d6ffcd51403af1e30e7663
