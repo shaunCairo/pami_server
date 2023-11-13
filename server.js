@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const app = require('./src/app.js');
 const db = require('./src/v1/models');
-
+	
 process.on('uncaughtException', (err) => {
 	console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
 	console.log(err, err.message);
@@ -14,8 +14,9 @@ process.on('uncaughtException', (err) => {
 	if (process.env.NODE_ENV === 'development') {
 		// await db.User.sync({ alter: true });
 		// await db.Image.sync({ alter: true });
-		// await db.ImageAssociation.sync({ alter: true });
+		// await db.ImageAssociation.sync({ force: true });
 		// await db.GovPartner.sync({ alter: true });
+		//await db.Hero.sync({ alter: true });
 	}
 
 	const port = process.env.PORT || 5000;

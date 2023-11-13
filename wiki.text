@@ -1,1 +1,58 @@
-IMPORTANT NOTES 
+
+** IMAGES **
+if you want to add image in a model
+you don't need to add it to the column of the model
+
+just put these codes on the particular model
+for example Hero Model
+
+
+Hero Model
+```
+this.belongsToMany(models.Image, {
+				through: {
+					model: models.ImageAssociation,
+					unique: false,
+					scope: {
+						owner_type: 'Hero',
+					},
+				},
+				foreignKey: 'owner_id',
+				constraints: false,
+				as: 'images',
+			});
+```
+
+Image model
+```
+this.belongsToMany(models.Hero, {
+    through: {
+        model: models.ImageAssociation,
+        unique: false,
+    },
+    foreignKey: 'image_id',
+    constraints: false,
+});
+```
+
+HeroService
+and put this in the ServiceClass of the Model
+this.include = [
+			{
+				model: Image,
+				as: 'images',
+				attributes: [
+					'id',
+					'public_id',
+					'secure_url',
+					'width',
+					'height',
+				],
+				through: { attributes: [] },
+			},
+		];
+
+		this.has_images = true;
+
+
+** END IMAGES **

@@ -15,11 +15,17 @@ const handleCastErrorDB = (err) => {
 
 const handleValidationErrorDB = (err) => {
 	let errors = {};
+	console.log(err.errors);
 	Object.values(err.errors).map((item) => {
+		item.message = item.message.split('.')[1];
+		if (item.message.includes('cannot be null')) {
+			item.message = item.message.replace(
+				'cannot be null',
+				'cannot be blank',
+			);
+		}
 		errors[item.path] = item.message;
 	});
-
-	console.log('errors', errors);
 
 	const message = `Invalid payload.`;
 	return new AppError(message, 400, errors);
@@ -37,7 +43,14 @@ const dispatchProductionError = (err, req, res) => {
 	if (err.isOperational) {
 		return res
 			.status(err.statusCode)
-			.json(errorResponse(err.statusCode, undefined, err.message, err.errors));
+			.json(
+				errorResponse(
+					err.statusCode,
+					undefined,
+					err.message,
+					err.errors,
+				),
+			);
 	}
 
 	return res.status(500).json({
@@ -57,13 +70,14 @@ module.exports = (err, req, res, next) => {
 
 	// this log (console.log(err)) contains the file path or the stack of the error
 	// it is for you! you don't need to return it to the client
-	console.log(err);
+	// console.log(err);
 
 	let error = { ...err };
 	error.message = err.message;
 	if (err.name === 'CastError') error = handleCastErrorDB(error);
 	if (err.code === 11000) error = handleDuplicateFieldsDB(error);
-	if (err.name === 'ValidationError') error = handleValidationErrorDB(error);
+	if (err.name === 'SequelizeValidationError')
+		error = handleValidationErrorDB(error);
 
 	if (err.expose) error = handleBadJSONFormat(error);
 

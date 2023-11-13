@@ -2,7 +2,7 @@
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
 #@hostname = https://hxh-api.cyclic.cloud/api/v1
 @endpoint = /users
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk3MDMwNjE4LCJleHAiOjE2OTcxMTcwMTh9.DI6gW6ULZAovD_i13RWHFc8uHx3vRppQEHXwBTzxcJ8
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5Nzk3MzQ4LCJleHAiOjE2OTk4ODM3NDh9.1Pf-gio2x7C1-O5tiVHEQ4BSNj4Zj2uP7c9M04U2Ajs
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}
@@ -24,13 +24,13 @@ POST {{hostname}}{{endpoint}}
 content-type: application/json
 Authorization: {{token}}
 
-{
-   "first_name": "DEV",
-   "last_name": "DEV_2",
-   "email": "dev@gmail.com",
-   "password": "password",
-   "role": "admin"
-}
+# {
+#    "first_name": "DEV",
+#    "last_name": "DEV_2",
+#    "email": "dev@gmail.com",
+#    "password": "password",
+#    "role": "admin"
+# }
 
 ### UPDATE RESOURCE
 PATCH {{hostname}}{{endpoint}}/64d6ffcd51403af1e30e7663

@@ -6,6 +6,7 @@
 
 const SequelizeQueryBuilder = require('../utils/SequelizeQueryBuilder.js');
 const PaginationHelper = require('../helpers/PaginationHelper.js');
+const { filterIds } = require('../utils/useUtils.js');
 
 class BaseService {
 	static className = 'BaseService';
@@ -64,7 +65,8 @@ class BaseService {
 		const data = await this.Model.create(payload);
 
 		if (this.has_images && payload.images) {
-			await data.addImages(payload.images);
+			// filter id before adding images
+			await data.addImages(filterIds(payload.images));
 		}
 
 		return data;
@@ -110,7 +112,8 @@ class BaseService {
 		}
 
 		if (this.has_images && payload.images) {
-			await data.setImages(payload.images);
+			// filter id before adding images
+			await data.setImages(filterIds(payload.images));
 		}
 
 		const updatedData = await this.readById(id);
