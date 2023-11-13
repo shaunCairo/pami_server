@@ -1,9 +1,9 @@
-const { User: Model, Image, Branch } = require('../models');
+const { Gallery: Model, Image } = require('../models');
 const BaseService = require('./BaseService');
 
-class UserService extends BaseService {
+class GalleryService extends BaseService {
 	Model;
-	static className = 'UserService';
+	static className = 'GalleryService';
 	constructor() {
 		super(Model);
 
@@ -21,13 +21,10 @@ class UserService extends BaseService {
 				],
 				through: { attributes: [] },
 			},
-			{
-				model: Branch,
-			},
 		];
 
 		this.has_images = true;
 	}
 }
 
-module.exports = UserService;
+module.exports = GalleryService;
