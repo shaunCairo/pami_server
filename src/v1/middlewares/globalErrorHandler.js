@@ -15,7 +15,7 @@ const handleCastErrorDB = (err) => {
 
 const handleValidationErrorDB = (err) => {
 	let errors = {};
-	console.log(err.errors);
+
 	Object.values(err.errors).map((item) => {
 		item.message = item.message.split('.')[1];
 		if (item.message.includes('cannot be null')) {
@@ -25,6 +25,17 @@ const handleValidationErrorDB = (err) => {
 			);
 		}
 		errors[item.path] = item.message;
+	});
+
+	const message = `Invalid payload.`;
+	return new AppError(message, 400, errors);
+};
+
+const handleUniqueError = (err) => {
+	let errors = {};
+
+	Object.values(err.errors).map((item) => {
+		errors[item.path] = item.path + ' is already exist';
 	});
 
 	const message = `Invalid payload.`;
@@ -73,9 +84,15 @@ module.exports = (err, req, res, next) => {
 	// console.log(err);
 
 	let error = { ...err };
+
+	// console.log('ERROR NAME', err.name);
 	error.message = err.message;
 	if (err.name === 'CastError') error = handleCastErrorDB(error);
 	if (err.code === 11000) error = handleDuplicateFieldsDB(error);
+
+	if (err.name === 'SequelizeUniqueConstraintError')
+		error = handleUniqueError(error);
+
 	if (err.name === 'SequelizeValidationError')
 		error = handleValidationErrorDB(error);
 
