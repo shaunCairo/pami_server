@@ -16,9 +16,26 @@ class SequelizeQueryBuilder {
 		excludedFields.forEach((el) => delete queryObj[el]);
 
 		// Convert operators
+
 		for (const key in queryObj) {
 			if (Object.prototype.hasOwnProperty.call(queryObj, key)) {
-				queryObj[key] = { [Op.eq]: queryObj[key] };
+				let opVal = 'eq';
+				let qryVal = queryObj[key];
+
+				if (
+					typeof queryObj[key] === 'object' &&
+					queryObj[key] !== null
+				) {
+					const keyName = Object.keys(queryObj[key])[0];
+					opVal = keyName;
+					qryVal = queryObj[key][keyName];
+				}
+
+				if (opVal === 'like') {
+					qryVal = '%' + qryVal + '%';
+				}
+
+				queryObj[key] = { [Op[opVal]]: qryVal };
 			}
 		}
 
@@ -54,6 +71,7 @@ class SequelizeQueryBuilder {
 	}
 
 	async getResults(include = []) {
+		console.log('this.filterOptions', this.filterOptions);
 		const results = await this.model.findAll({
 			where: this.filterOptions,
 			attributes: this.attributesOptions,
@@ -61,6 +79,7 @@ class SequelizeQueryBuilder {
 			...this.paginationOptions,
 			include: include,
 		});
+
 		return results;
 	}
 }

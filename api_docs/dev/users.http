@@ -2,7 +2,7 @@
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
 #@hostname = https://hxh-api.cyclic.cloud/api/v1
 @endpoint = /users
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5Nzk3MzQ4LCJleHAiOjE2OTk4ODM3NDh9.1Pf-gio2x7C1-O5tiVHEQ4BSNj4Zj2uP7c9M04U2Ajs
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAwMTExNjI5LCJleHAiOjE3MDAxOTgwMjl9.ilk6xHiaGCgGiDIX62A7vUcaprI8R6edyvZKhsc7S0Q
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}
@@ -10,7 +10,7 @@ content-type: application/json
 Authorization: {{token}}
 
 ### GET RESOURCE WITH FILTERS AND PAGINATION
-GET {{hostname}}{{endpoint}}?page=1&limit=2
+GET {{hostname}}{{endpoint}}?last_name[like]=developer&page=1&limit=2
 content-type: application/json
 Authorization: {{token}}
 

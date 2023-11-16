@@ -15,7 +15,7 @@ Authorization: {{token}}
 # }
 
 {
-	"email": "ez@mil.com",
+	"email": "dev@gmail.com",
 	"password": "password"
 }
 
