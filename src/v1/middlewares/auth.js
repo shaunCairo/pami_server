@@ -58,7 +58,7 @@ exports.protect = catchUnknownError(async (req, res, next) => {
 	next();
 });
 
-exports.restrictedTo = (...roles) => {
+exports.restrictedTo = (roles) => {
 	return (req, res, next) => {
 		if (!roles.includes(req.user.role)) {
 			return next(
@@ -68,7 +68,6 @@ exports.restrictedTo = (...roles) => {
 				),
 			);
 		}
-
 		next();
 	};
 };

@@ -1,7 +1,7 @@
 @hostname = http://localhost:4000/api/v1
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
 @endpoint = /blogs
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5Nzk3MzQ4LCJleHAiOjE2OTk4ODM3NDh9.1Pf-gio2x7C1-O5tiVHEQ4BSNj4Zj2uP7c9M04U2Ajs
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwMjE3MzE2LCJleHAiOjE3MDAzMDM3MTZ9.75bXH5BEbieRyEM7HZjyM6qScOtvLd9N8rJwEPmWmuU
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}

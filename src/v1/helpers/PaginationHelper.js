@@ -26,8 +26,9 @@ class PaginationHelper {
 
 	async getTotalDataCount() {
 		let whereCondition = {};
-		if (this.query.filter_string) {
-			whereCondition = JSON.parse(this.query.filter_string);
+
+		if (Object.keys(this.query.filterOptions).length >= 1) {
+			whereCondition = this.query.filterOptions;
 		}
 
 		this.total_data_count = await this.Model.count({
