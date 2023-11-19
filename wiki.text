@@ -56,3 +56,7 @@ this.include = [
 
 
 ** END IMAGES **
+
+
+** SORTING **
+sample of sorting query ?sort=-title&sort=subtitle&page=1&limit=10

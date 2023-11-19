@@ -61,9 +61,33 @@ class SequelizeQueryBuilder {
 
 	sort() {
 		if (this.reqQuery.sort) {
-			const sortBy = this.reqQuery.sort.split(',').join(' ');
-			this.orderOptions = [sortBy];
+			// Initialize an empty object
+			const orderArr = [];
+
+			if (!Array.isArray(this.reqQuery.sort)) {
+				if (this.reqQuery.sort.charAt(0) === '-') {
+					const col_name = this.reqQuery.sort.substring(1);
+					orderArr.push([col_name, 'DESC']);
+				} else {
+					orderArr.push([this.reqQuery.sort, 'ASC']);
+				}
+			} else {
+				// Iterate through the array and set the constant value 'DESC'
+				for (const column of this.reqQuery.sort) {
+					if (column.charAt(0) === '-') {
+						const col_name = column.substring(1);
+						orderArr.push([col_name, 'DESC']);
+					} else {
+						orderArr.push([column, 'ASC']);
+					}
+				}
+			}
+
+			console.log('this.reqQuery.sort', orderArr);
+
+			this.orderOptions = orderArr;
 		}
+
 		return this;
 	}
 
