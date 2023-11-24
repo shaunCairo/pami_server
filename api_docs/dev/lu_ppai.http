@@ -1,0 +1,309 @@
+@hostname = http://localhost:4000/api/v1
+#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+@endpoint = /lu_ppai
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwNzM1Mjc1LCJleHAiOjE3MDA4MjE2NzV9.CKs2e_CVfUYWroPGQJ2Gson_Fy1ljJPQDYOOOXtlePU
+
+### GET ALL RESOURCE
+GET {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+### GET RESOURCE WITH FILTERS AND PAGINATION
+GET {{hostname}}{{endpoint}}?page=1&limit=10
+content-type: application/json
+Authorization: {{token}}
+
+### GET SINGLE RESOURCE
+GET {{hostname}}{{endpoint}}/7
+content-type: application/json
+Authorization: {{token}}
+
+### ADD/STORE RESOURCE
+POST {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "coc_date": "11/20/2017",
+    "coc_ctrc": "CAR025022-TRL1112017",
+    "ltf_case": "04BC040",
+    "ltf_oper": "DELA CRUZ, BERNARDO",
+    "ltf_addr": "ALAPANG LA TRINIDAD BENGUET",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "ANY PT. IN CAR",
+    "ltf_via": "()",
+    "coc_pefr": "11/20/2017",
+    "coc_peto": "11/20/2018",
+    "veh_moyr": "NA",
+    "veh_make": "MITSUBISHI",
+    "veh_plno": "AYR442",
+    "veh_seno": "PAEVB5NJ15B 006698",
+    "veh_mono": "4D56A-P6862",
+    "mvfile_no": "140400000027151",
+    "auth_no": "VALID",
+    "agn_code": "I006",
+    "coc_amt": 0,
+    "veh_type": "BUSY"
+  }
+
+
+
+### UPDATE RESOURCE
+PATCH {{hostname}}{{endpoint}}/1
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "title": "First Hero Updated",
+   "images": [1,2,3]
+}
+
+###
+PATCH {{hostname}}{{endpoint}}/7                   
+content-type: application/json
+Authorization: {{token}}
+
+{
+  "first_name": "eugene"
+}
+
+### DELETE RESOURCE
+DELETE {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+content-type: application/json
+Authorization: {{token}}
+
+
+### Sample data
+[
+  {
+    "coc_date": "11/13/2017",
+    "coc_ctrc": "CAR023499-TRL1112017",
+    "ltf_case": "2012CAR339",
+    "ltf_oper": "BACOCO, REYNARDO",
+    "ltf_addr": "MIRADOR HILL, BAGUIO CITY",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "TO ANY PT. IN CAR",
+    "ltf_via": "()",
+    "coc_pefr": "11/13/2017",
+    "coc_peto": "11/13/2018",
+    "veh_moyr": "2003",
+    "veh_make": "MITSUBISHI",
+    "veh_plno": "AYR321",
+    "veh_seno": "PAEVB5NS13B000249",
+    "veh_mono": "4D56A-N3533",
+    "mvfile_no": "134000000323846",
+    "auth_no": null,
+    "agn_code": "I002",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/15/2017",
+    "coc_ctrc": "CAR024087-JEPN112017",
+    "ltf_case": "8801655",
+    "ltf_oper": "SALOG, LUIS",
+    "ltf_addr": "30 FRANCISCO MAYO, AMBIONG BAGUIO CITY",
+    "ltf_orig": "BAGUIO PLAZA",
+    "ltf_dest": "AURORA HILL",
+    "ltf_via": "()",
+    "coc_pefr": "11/15/2017",
+    "coc_peto": "11/15/2018",
+    "veh_moyr": "NA",
+    "veh_make": "FUSO",
+    "veh_plno": "AVA523",
+    "veh_seno": "LTC MK 15920",
+    "veh_mono": "5148",
+    "mvfile_no": "13280000019864A",
+    "auth_no": "VALID",
+    "agn_code": "I001",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/20/2017",
+    "coc_ctrc": "CAR024461-TRL1112017",
+    "ltf_case": "2004BAGCAR2052",
+    "ltf_oper": "CALIMLIM, VICTOR",
+    "ltf_addr": "26 M.ROXAS ST., BRGY TABORA, BAGUIO CITY",
+    "ltf_orig": "BAGUIO PLAZA",
+    "ltf_dest": "TRANCOVILLE",
+    "ltf_via": "()",
+    "coc_pefr": "11/20/2017",
+    "coc_peto": "11/20/2018",
+    "veh_moyr": "1996",
+    "veh_make": "KIA",
+    "veh_plno": "AYR214",
+    "veh_seno": "CMKW56 00273",
+    "veh_mono": "SC 800036",
+    "mvfile_no": "014000000193866",
+    "auth_no": null,
+    "agn_code": "I006",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/20/2017",
+    "coc_ctrc": "CAR025022-TRL1112017",
+    "ltf_case": "04BC040",
+    "ltf_oper": "DELA CRUZ, BERNARDO",
+    "ltf_addr": "ALAPANG LA TRINIDAD BENGUET",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "ANY PT. IN CAR",
+    "ltf_via": "()",
+    "coc_pefr": "11/20/2017",
+    "coc_peto": "11/20/2018",
+    "veh_moyr": "NA",
+    "veh_make": "MITSUBISHI",
+    "veh_plno": "AYR442",
+    "veh_seno": "PAEVB5NJ15B 006698",
+    "veh_mono": "4D56A-P6862",
+    "mvfile_no": "140400000027151",
+    "auth_no": null,
+    "agn_code": "I006",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/13/2017",
+    "coc_ctrc": "CAR027719-TRKN112017",
+    "ltf_case": "98BC334",
+    "ltf_oper": "ACONG, FELICIDAD",
+    "ltf_addr": "32 DOMINICAN HILL, BAGUIO CITY",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "TO ANY PT. IN CAR",
+    "ltf_via": "()",
+    "coc_pefr": "11/13/2017",
+    "coc_peto": "11/13/2018",
+    "veh_moyr": "2015",
+    "veh_make": "MITSUBISHI",
+    "veh_plno": "ABN9917",
+    "veh_seno": "PAEVB5MLFFB001860",
+    "veh_mono": "4D56AAL9352",
+    "mvfile_no": "140400000058146",
+    "auth_no": null,
+    "agn_code": "I006",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/9/2017",
+    "coc_ctrc": "CAR027827-AUVN112017",
+    "ltf_case": "200701209",
+    "ltf_oper": "GAZA, ORLANDO",
+    "ltf_addr": "KM. 3, ASIN RD., BAGUIO CITY",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "CARMEN",
+    "ltf_via": "()",
+    "coc_pefr": "11/9/2017",
+    "coc_peto": "11/9/2018",
+    "veh_moyr": "2012",
+    "veh_make": "TOYOTA",
+    "veh_plno": "TOW273",
+    "veh_seno": "JTFJS02P500028662",
+    "veh_mono": "2KD5671535",
+    "mvfile_no": "138000000706117",
+    "auth_no": null,
+    "agn_code": "I006",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/3/2017",
+    "coc_ctrc": "CAR028173-BUSY112017",
+    "ltf_case": "2000011173",
+    "ltf_oper": "PAGNAS, JOE",
+    "ltf_addr": "BAYABAS, SABLAN, BENGUET",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "BALER",
+    "ltf_via": "PANTABANGAN",
+    "coc_pefr": "11/17/2017",
+    "coc_peto": "11/17/2018",
+    "veh_moyr": "2014",
+    "veh_make": "ZHONGTONG",
+    "veh_plno": "130109",
+    "veh_seno": "LDY6GS8D5E0004616",
+    "veh_mono": "A440EE30014",
+    "mvfile_no": "130100000167907",
+    "auth_no": null,
+    "agn_code": "I002",
+    "coc_amt": 2394
+  },
+  {
+    "coc_date": "11/3/2017",
+    "coc_ctrc": "CAR028174-BUSY112017",
+    "ltf_case": "2000011173",
+    "ltf_oper": "PAGNAS, JOE",
+    "ltf_addr": "BAYABAS, SABLAN, BENGUET",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "BALER",
+    "ltf_via": "PANTABANGAN",
+    "coc_pefr": "11/3/2017",
+    "coc_peto": "11/3/2018",
+    "veh_moyr": "2014",
+    "veh_make": "ZHONHTONG",
+    "veh_plno": "NEW",
+    "veh_seno": "LDY6GSBD7E0004617",
+    "veh_mono": "A446EE30013",
+    "mvfile_no": "130100000167901",
+    "auth_no": null,
+    "agn_code": "I002",
+    "coc_amt": 2394
+  },
+  {
+    "coc_date": "11/3/2017",
+    "coc_ctrc": "CAR028183-AUVN112017",
+    "ltf_case": "201301463",
+    "ltf_oper": "BOCLAO, TOMMY",
+    "ltf_addr": "GOLDFIELD, ITOGON, BENGUET",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "CARMEN",
+    "ltf_via": "()",
+    "coc_pefr": "11/3/2017",
+    "coc_peto": "11/3/2018",
+    "veh_moyr": "2015",
+    "veh_make": "TOYOTA",
+    "veh_plno": "AVA6874",
+    "veh_seno": "JTFJS02P605025049",
+    "veh_mono": "2KDA698228",
+    "mvfile_no": "038000000243605",
+    "auth_no": null,
+    "agn_code": "I002",
+    "coc_amt": 1614
+  },
+  {
+    "coc_date": "11/3/2017",
+    "coc_ctrc": "CAR028184-AUVN112017",
+    "ltf_case": "201301463",
+    "ltf_oper": "PARIZAL, WENDELL",
+    "ltf_addr": "NO. 317 MALABAGO, CALASIAO, PANGASINAN",
+    "ltf_orig": "BAGUIO CITY",
+    "ltf_dest": "DAGUPAN CITY",
+    "ltf_via": "()",
+    "coc_pefr": "11/3/2017",
+    "coc_peto": "11/3/2018",
+    "veh_moyr": "2017",
+    "veh_make": "TOYOTA",
+    "veh_plno": "10102",
+    "veh_seno": "JTFJTP9G5007605",
+    "veh_mono": "1KD2672776",
+    "mvfile_no": "010100000333129",
+    "auth_no": null,
+    "agn_code": "I002",
+    "coc_amt": 1614
+  },
+  {
+    "coc_date": "11/14/2017",
+    "coc_ctrc": "CAR028185-JEPN112017",
+    "ltf_case": "9901856",
+    "ltf_oper": "BITAGA, ANTHONY",
+    "ltf_addr": "LOT 2 BLOCK 14 GREEN SUMMERVILLE, BAKAKENG BAGUIO",
+    "ltf_orig": "BAGUIO PLAZA",
+    "ltf_dest": "CAMPO SIOCO",
+    "ltf_via": "()",
+    "coc_pefr": "11/14/2017",
+    "coc_peto": "11/14/2018",
+    "veh_moyr": "1999",
+    "veh_make": "ISUZU",
+    "veh_plno": "AYE953",
+    "veh_seno": "MAR98-5173-C",
+    "veh_mono": "4BD1-101561",
+    "mvfile_no": "142000000003632",
+    "auth_no": "VALID",
+    "agn_code": "I006",
+    "coc_amt": 0
+  }
+]

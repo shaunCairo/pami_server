@@ -1,0 +1,156 @@
+@hostname = http://localhost:4000/api/v1
+#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+@endpoint = /ci_ctpl
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwNzM1Mjc1LCJleHAiOjE3MDA4MjE2NzV9.CKs2e_CVfUYWroPGQJ2Gson_Fy1ljJPQDYOOOXtlePU
+
+### GET ALL RESOURCE
+GET {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+### GET RESOURCE WITH FILTERS AND PAGINATION
+GET {{hostname}}{{endpoint}}?page=1&limit=10
+content-type: application/json
+Authorization: {{token}}
+
+### GET SINGLE RESOURCE
+GET {{hostname}}{{endpoint}}/7
+content-type: application/json
+Authorization: {{token}}
+
+### ADD/STORE RESOURCE
+POST {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "ref_num": "16-161702",
+    "cl_loss": "12/23/2016",
+    "cl_date": "1/19/2017",
+    "coc_date": "2/29/2016",
+    "tplnum": "CEN472148-NT06",
+    "veh_plno": "RLG863",
+    "ltf_oper": "CUICO NOEL",
+    "claimant": "JULIET CABALLAR",
+    "cov_desc": "DISABILITY",
+    "res_amt": 25000,
+    "pay_amt": 15000,
+    "cv_dt": "1/19/2017",
+    "cv_no": "C20813",
+    "chk_no": "UCPB7835155",
+    "cl_stat": "PD"
+  }
+
+### UPDATE RESOURCE
+PATCH {{hostname}}{{endpoint}}/1
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "title": "First Hero Updated",
+   "images": [1,2,3]
+}
+
+###
+PATCH {{hostname}}{{endpoint}}/7                   
+content-type: application/json
+Authorization: {{token}}
+
+{
+  "first_name": "eugene"
+}
+
+### DELETE RESOURCE
+DELETE {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+content-type: application/json
+Authorization: {{token}}
+
+
+### Sample Data
+[
+  {
+    "ref_num": "16-161702",
+    "cl_loss": "12/23/2016",
+    "cl_date": "1/19/2017",
+    "coc_date": "2/29/2016",
+    "tplnum": "CEN472148-NT06",
+    "veh_plno": "RLG863",
+    "ltf_oper": "CUICO NOEL",
+    "claimant": "JULIET CABALLAR",
+    "cov_desc": "DISABILITY",
+    "res_amt": 25000,
+    "pay_amt": 15000,
+    "cv_dt": "1/19/2017",
+    "cv_no": "C20813",
+    "chk_no": "UCPB7835155",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "16-171102",
+    "cl_loss": "9/22/2016",
+    "cl_date": "4/24/2017",
+    "coc_date": "3/22/2016",
+    "tplnum": "CAR057222-NPUJ",
+    "veh_plno": "AYH923",
+    "ltf_oper": "PIS EW, RODOLFO",
+    "claimant": "ORLANDO REYES JR",
+    "cov_desc": "DISABILITY",
+    "res_amt": 25000,
+    "pay_amt": 25000,
+    "cv_dt": "4/24/2017",
+    "cv_no": "C21339",
+    "chk_no": "UCPB7836012",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "16-173501",
+    "cl_loss": "7/21/2016",
+    "cl_date": "2/17/2017",
+    "coc_date": "6/13/2016",
+    "tplnum": "NCR427661-NSED",
+    "veh_plno": "UYC106",
+    "ltf_oper": "VILLANUEVA, JOSE ENRICO",
+    "claimant": "REYMONDO ESOK",
+    "cov_desc": "DISABILITY",
+    "res_amt": 25000,
+    "pay_amt": 20000,
+    "cv_dt": "2/21/2017",
+    "cv_no": "C20981",
+    "chk_no": "UCPB7835414",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "17-013302",
+    "cl_loss": "2/13/2017",
+    "cl_date": "3/27/2017",
+    "coc_date": "3/17/2016",
+    "tplnum": "CEN479252-NT10",
+    "veh_plno": "RFC713",
+    "ltf_oper": "ALL COUNTS TRANSPORT SERVICES CORP",
+    "claimant": "ARNOLD ROTAMOLA",
+    "cov_desc": "DISABILITY",
+    "res_amt": 25000,
+    "pay_amt": 15000,
+    "cv_dt": "3/28/2017",
+    "cv_no": "C21192",
+    "chk_no": "UCPB7835781",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "17-018702",
+    "cl_loss": "3/4/2017",
+    "cl_date": "4/5/2017",
+    "coc_date": "10/19/2016",
+    "tplnum": "NCR449396-NPUJ",
+    "veh_plno": "TVZ900",
+    "ltf_oper": "VILLARUEL, EDMAR",
+    "claimant": "AMELIA VILLARAIZ",
+    "cov_desc": "DISABILITY",
+    "res_amt": 25000,
+    "pay_amt": 20000,
+    "cv_dt": "4/6/2017",
+    "cv_no": "C21274",
+    "chk_no": "UCPB7835914",
+    "cl_stat": "PD"
+  }
+]

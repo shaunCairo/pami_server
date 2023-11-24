@@ -21,6 +21,10 @@ process.on('uncaughtException', (err) => {
 		//await db.Branch.sync({ alter: true });
 		//await db.Gallery.sync({ alter: true });
 		// await db.Claim.sync({ alter: true });
+		await db.LuPpai.sync({ alter: true });
+		await db.LuCtpl.sync({ alter: true });
+		await db.CiPpai.sync({ alter: true });
+		await db.CiCtpl.sync({ alter: true });
 	}
 
 	const port = process.env.PORT || 5000;

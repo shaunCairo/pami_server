@@ -1,0 +1,168 @@
+@hostname = http://localhost:4000/api/v1
+#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+@endpoint = /lu_ctpl
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwNzM1Mjc1LCJleHAiOjE3MDA4MjE2NzV9.CKs2e_CVfUYWroPGQJ2Gson_Fy1ljJPQDYOOOXtlePU
+
+### GET ALL RESOURCE
+GET {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+### GET RESOURCE WITH FILTERS AND PAGINATION
+GET {{hostname}}{{endpoint}}?page=1&limit=10
+content-type: application/json
+Authorization: {{token}}
+
+### GET SINGLE RESOURCE
+GET {{hostname}}{{endpoint}}/7
+content-type: application/json
+Authorization: {{token}}
+
+### ADD/STORE RESOURCE
+POST {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "coc_date": "11/13/2017",
+    "tplnum": "CAR063682",
+    "coc_ctrc": "CAR023499-TRL1112017",
+    "ltf_case": "2012CAR339",
+    "ltf_oper": "BACOCO, REYNARDO",
+    "ltf_addr": "MIRADOR HILL, BAGUIO CITY",
+    "coc_pefr": "11/13/2017",
+    "coc_peto": "11/13/2018",
+    "veh_moyr": "2003",
+    "veh_make": "MITSUBISHI",
+    "veh_plno": "AYR321",
+    "veh_seno": "PAEVB5NS13B000249",
+    "veh_mono": "4D56A-N3533",
+    "agn_code": "I002",
+    "auth_no": "VALID",
+    "mvfile_no": "134000000323846",
+    "coc_amt": 100,
+    "veh_type": "BUSY"
+  }
+
+### UPDATE RESOURCE
+PATCH {{hostname}}{{endpoint}}/1
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "title": "First Hero Updated",
+   "images": [1,2,3]
+}
+
+###
+PATCH {{hostname}}{{endpoint}}/7                   
+content-type: application/json
+Authorization: {{token}}
+
+{
+  "first_name": "eugene"
+}
+
+### DELETE RESOURCE
+DELETE {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+content-type: application/json
+Authorization: {{token}}
+
+### Sample Data
+[
+  {
+    "coc_date": "11/20/2017",
+    "tplnum": "CAR063626",
+    "coc_ctrc": "CAR024220-JEPN032017",
+    "ltf_case": "2000011476",
+    "ltf_oper": "DUMLAO, IRENEO",
+    "ltf_addr": "PALAQUIO, BUCAY, ABRA",
+    "coc_pefr": "11/20/2017",
+    "coc_peto": "11/20/2018",
+    "veh_moyr": "2000",
+    "veh_make": "ISUZU",
+    "veh_plno": "AYG363",
+    "veh_seno": "NKR58L-7110194",
+    "veh_mono": "4BD1-136157",
+    "agn_code": "I006",
+    "auth_no": null,
+    "mvfile_no": "131200000195469",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/13/2017",
+    "tplnum": "CAR063682",
+    "coc_ctrc": "CAR023499-TRL1112017",
+    "ltf_case": "2012CAR339",
+    "ltf_oper": "BACOCO, REYNARDO",
+    "ltf_addr": "MIRADOR HILL, BAGUIO CITY",
+    "coc_pefr": "11/13/2017",
+    "coc_peto": "11/13/2018",
+    "veh_moyr": "2003",
+    "veh_make": "MITSUBISHI",
+    "veh_plno": "AYR321",
+    "veh_seno": "PAEVB5NS13B000249",
+    "veh_mono": "4D56A-N3533",
+    "agn_code": "I002",
+    "auth_no": null,
+    "mvfile_no": "134000000323846",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/24/2017",
+    "tplnum": "CAR064037",
+    "coc_ctrc": "CAR026191-SEDN112017",
+    "ltf_case": "2001BC438",
+    "ltf_oper": "IGARTA, PEDRO",
+    "ltf_addr": "53 UPPER EAST, PRK. 1, CAMP 7, BAGUIO CITY",
+    "coc_pefr": "11/24/2017",
+    "coc_peto": "11/24/2018",
+    "veh_moyr": "2013",
+    "veh_make": "NISSAN",
+    "veh_plno": "WDQ884",
+    "veh_seno": "TVP4LEFE24A50554",
+    "veh_mono": "TD27940130",
+    "agn_code": "I001",
+    "auth_no": "VALD",
+    "mvfile_no": "130800000554092",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/20/2017",
+    "tplnum": "CAR064119",
+    "coc_ctrc": "CAR025654-TRKN042017",
+    "ltf_case": "2014CAR796",
+    "ltf_oper": "MARIANO, ROGER",
+    "ltf_addr": "TUEY, TUBLAY, BENGUET",
+    "coc_pefr": "11/20/2017",
+    "coc_peto": "11/20/2018",
+    "veh_moyr": "1996",
+    "veh_make": "ISUZU",
+    "veh_plno": "UHZ561",
+    "veh_seno": "FRR12JA3600898",
+    "veh_mono": "6BG1S10301",
+    "agn_code": "I006",
+    "auth_no": "51609",
+    "mvfile_no": "131200000103440",
+    "coc_amt": 0
+  },
+  {
+    "coc_date": "11/20/2017",
+    "tplnum": "CAR064956",
+    "coc_ctrc": "CAR024523-SEDN032017",
+    "ltf_case": "200001609",
+    "ltf_oper": "QUITENG, MARY",
+    "ltf_addr": "2 PUROK 6 PINSAO PILOT PROJECT, BAGUIO CITY",
+    "coc_pefr": "11/20/2017",
+    "coc_peto": "11/20/2018",
+    "veh_moyr": "2013",
+    "veh_make": "ISUZU",
+    "veh_plno": "AYV143",
+    "veh_seno": "PABTBR54FD2073195",
+    "veh_mono": "4JA1M40651",
+    "agn_code": "I006",
+    "auth_no": null,
+    "mvfile_no": "142000000028657",
+    "coc_amt": 0
+  }
+]

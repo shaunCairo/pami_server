@@ -1,0 +1,156 @@
+@hostname = http://localhost:4000/api/v1
+#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+@endpoint = /ci_ppai
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwNzM1Mjc1LCJleHAiOjE3MDA4MjE2NzV9.CKs2e_CVfUYWroPGQJ2Gson_Fy1ljJPQDYOOOXtlePU
+
+### GET ALL RESOURCE
+GET {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+### GET RESOURCE WITH FILTERS AND PAGINATION
+GET {{hostname}}{{endpoint}}?page=1&limit=10
+content-type: application/json
+Authorization: {{token}}
+
+### GET SINGLE RESOURCE
+GET {{hostname}}{{endpoint}}/7
+content-type: application/json
+Authorization: {{token}}
+
+### ADD/STORE RESOURCE
+POST {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "ref_num": "07-069501",
+    "cl_loss": "9/5/2007",
+    "cl_date": "3/3/2017",
+    "coc_date": "2/2/2007",
+    "coc_ctrc": "R05022419-JEPN",
+    "veh_plno": "EVC932",
+    "ltf_oper": "AGAO EDDIE",
+    "claimant": "JESUS BALINGIT",
+    "cov_desc": "DEATH",
+    "res_amt": 60000,
+    "pay_amt": 60000,
+    "cv_dt": "3/15/2017",
+    "cv_no": "P17168",
+    "chk_no": "UCPB7835706",
+    "cl_stat": "PD"
+}
+### UPDATE RESOURCE
+PATCH {{hostname}}{{endpoint}}/1
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "title": "First Hero Updated",
+   "images": [1,2,3]
+}
+
+###
+PATCH {{hostname}}{{endpoint}}/7                   
+content-type: application/json
+Authorization: {{token}}
+
+{
+  "first_name": "eugene"
+}
+
+### DELETE RESOURCE
+DELETE {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+content-type: application/json
+Authorization: {{token}}
+
+
+### Sample Data
+
+[
+  {
+    "ref_num": "07-069501",
+    "cl_loss": "9/5/2007",
+    "cl_date": "3/3/2017",
+    "coc_date": "2/2/2007",
+    "coc_ctrc": "R05022419-JEPN",
+    "veh_plno": "EVC932",
+    "ltf_oper": "AGAO EDDIE",
+    "claimant": "JESUS BALINGIT",
+    "cov_desc": "DEATH",
+    "res_amt": 60000,
+    "pay_amt": 60000,
+    "cv_dt": "3/15/2017",
+    "cv_no": "P17168",
+    "chk_no": "UCPB7835706",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "07-069501",
+    "cl_loss": "9/5/2007",
+    "cl_date": "3/3/2017",
+    "coc_date": "2/2/2007",
+    "coc_ctrc": "R05022419-JEPN",
+    "veh_plno": "EVC932",
+    "ltf_oper": "AGAO EDDIE",
+    "claimant": "JESUS BALINGIT",
+    "cov_desc": "DEATH",
+    "res_amt": 60000,
+    "pay_amt": 60000,
+    "cv_dt": "3/15/2017",
+    "cv_no": "P17168",
+    "chk_no": "UCPB7835706",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "07-069501",
+    "cl_loss": "9/5/2007",
+    "cl_date": "3/3/2017",
+    "coc_date": "2/2/2007",
+    "coc_ctrc": "R05022419-JEPN",
+    "veh_plno": "EVC932",
+    "ltf_oper": "AGAO EDDIE",
+    "claimant": "JESUS BALINGIT",
+    "cov_desc": "DEATH",
+    "res_amt": 60000,
+    "pay_amt": 60000,
+    "cv_dt": "3/15/2017",
+    "cv_no": "P17168",
+    "chk_no": "UCPB7835706",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "07-069501",
+    "cl_loss": "9/5/2007",
+    "cl_date": "3/3/2017",
+    "coc_date": "2/2/2007",
+    "coc_ctrc": "R05022419-JEPN",
+    "veh_plno": "EVC932",
+    "ltf_oper": "AGAO EDDIE",
+    "claimant": "JESUS BALINGIT",
+    "cov_desc": "DEATH",
+    "res_amt": 60000,
+    "pay_amt": 60000,
+    "cv_dt": "3/15/2017",
+    "cv_no": "P17168",
+    "chk_no": "UCPB7835706",
+    "cl_stat": "PD"
+  },
+  {
+    "ref_num": "13-075301",
+    "cl_loss": "12/1/2013",
+    "cl_date": "3/13/2017",
+    "coc_date": "6/5/2013",
+    "coc_ctrc": "NCR368598-JEPA",
+    "veh_plno": "DFH786",
+    "ltf_oper": "LAGRO TSCI/ABANADOR, MOISES C.",
+    "claimant": "JELLY ANN COMENDADOR",
+    "cov_desc": "DEATH",
+    "res_amt": 75000,
+    "pay_amt": 75000,
+    "cv_dt": "3/14/2017",
+    "cv_no": "P17157",
+    "chk_no": "UCPB7835683",
+    "cl_stat": "PD"
+  }
+]
