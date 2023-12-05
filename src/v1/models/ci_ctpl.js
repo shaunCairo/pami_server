@@ -55,10 +55,10 @@ module.exports = (sequelize, DataTypes) => {
 				field: 'claimant',
 				comment: 'Claimant',
 			},
-			cov_desc: {
+			CovDesc: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'cov_desc',
+				field: 'CovDesc',
 				comment: 'Claim Type',
 			},
 			res_amt: {
@@ -103,9 +103,10 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		{
 			sequelize: sequelize,
-			underscored: true,
 			modelName: 'CiCtpl',
 			tableName: 'ci_ctpl',
+			timestamps: false,
+			freezeTableName: true,
 		},
 	);
 	return CiCtpl;

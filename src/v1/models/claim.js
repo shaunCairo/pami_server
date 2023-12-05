@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
 			contact: { type: DataTypes.STRING, allowNull: false },
 			doi: { type: DataTypes.DATEONLY, allowNull: false },
 			poi: { type: DataTypes.STRING, allowNull: false },
+			summary: { type: DataTypes.STRING, allowNull: false },
 			is_published: {
 				type: DataTypes.BOOLEAN,
 				allowNull: false,

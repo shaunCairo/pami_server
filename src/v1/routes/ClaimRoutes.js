@@ -10,7 +10,7 @@ const _MainController = require('../controllers/ClaimController');
 
 const MainController = new _MainController([MainService]);
 
-const prefix = '/claim_inquiries';
+const prefix = '/claim_reports';
 
 router.get(
 	`${prefix}`,
@@ -34,7 +34,6 @@ router.patch(
 router.post(
 	`${prefix}`,
 	express.json(),
-	auth.protect,
 	catchUnknownError(MainController.create.bind(MainController)),
 );
 

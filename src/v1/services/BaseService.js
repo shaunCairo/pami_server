@@ -99,13 +99,13 @@ class BaseService {
 	 * @returns true or false
 	 */
 	async update(id, payload) {
-		const user = await this.readById(id);
+		const _data = await this.readById(id);
 
-		if (!user) {
+		if (!_data) {
 			return false;
 		}
 
-		const data = await user.update(payload);
+		const data = await _data.update(payload);
 
 		if (!data) {
 			return false;
@@ -126,7 +126,17 @@ class BaseService {
 	 * @param {*} id
 	 * @returns boolean
 	 */
-	async delete(id) {}
+	async delete(id) {
+		const _data = await this.readById(id);
+
+		if (!_data) {
+			return false;
+		}
+
+		const data = await _data.destroy();
+
+		return data;
+	}
 }
 
 module.exports = BaseService;

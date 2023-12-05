@@ -36,27 +36,9 @@ class ImageController extends BaseController {
 			);
 		}
 
-		// update related model if the image was deleted need to deleted also on other models
-		// const ecomSet = await EcommSetting.updateMany(
-		// 	{},
-		// 	{
-		// 		$pull: {
-		// 			navbarBGs: id,
-		// 			heros: id,
-		// 		},
-		// 	},
-		// );
-
-		// await EcommSetting.updateOne(
-		// 	{
-		// 		activeHero: id,
-		// 	},
-		// 	{
-		// 		$unset: {
-		// 			activeHero: '',
-		// 		},
-		// 	},
-		// );
+		// delete the association of the image_id given to any models
+		const ImageAssociationService = new this.ImageAssociationService();
+		await ImageAssociationService.deleteImageAssoc(id);
 
 		await cloudinary.uploader.destroy(data.public_id);
 

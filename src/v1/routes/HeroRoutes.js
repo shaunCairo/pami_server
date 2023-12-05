@@ -14,13 +14,11 @@ const prefix = '/heros';
 
 router.get(
 	`${prefix}`,
-	auth.protect,
 	catchUnknownError(MainController.readAll.bind(MainController)),
 );
 
 router.get(
 	`${prefix}/:id`,
-	auth.protect,
 	catchUnknownError(MainController.readOne.bind(MainController)),
 );
 

@@ -6,9 +6,13 @@ const upload = require('../middlewares/multer.js');
 const catchUnknownError = require('../utils/catchUnknownError.js');
 
 const MainService = require('../services/ImageService');
+const ImageAssociationService = require('../services/ImageAssociationService');
 const _MainController = require('../controllers/ImageController');
 
-const MainController = new _MainController([MainService]);
+const MainController = new _MainController([
+	MainService,
+	ImageAssociationService,
+]);
 
 const prefix = '/images';
 

@@ -7,112 +7,112 @@ module.exports = (sequelize, DataTypes) => {
 
 	LuCtpl.init(
 		{
-			coc_date: {
+			COC_DATE: {
 				type: DataTypes.DATEONLY,
 				allowNull: false,
-				field: 'coc_date',
+				field: 'COC_DATE',
 				comment: 'Issue Date',
 			},
-			tplnum: {
+			TPLNUM: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'tplnum',
+				field: 'TPLNUM',
 				comment: 'CTPL Policy No.',
 			},
-			coc_ctrc: {
+			COC_CTRC: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'coc_ctrc',
+				field: 'COC_CTRC',
 				comment: 'PPAI Policy No.',
 			},
-			ltf_case: {
+			LTF_CASE: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'ltf_case',
+				field: 'LTF_CASE',
 				comment: 'Case No.',
 			},
-			ltf_oper: {
+			LTF_OPER: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'ltf_oper',
+				field: 'LTF_OPER',
 				comment: 'Operator',
 			},
-			ltf_addr: {
+			LTF_ADDR: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'ltf_addr',
+				field: 'LTF_ADDR',
 				comment: 'Address',
 			},
-			coc_pefr: {
+			COC_PEFR: {
 				type: DataTypes.DATEONLY,
 				allowNull: false,
-				field: 'coc_pefr',
+				field: 'COC_PEFR',
 				comment: 'Inception',
 			},
-			coc_peto: {
+			COC_PETO: {
 				type: DataTypes.DATEONLY,
 				allowNull: false,
-				field: 'coc_peto',
+				field: 'COC_PETO',
 				comment: 'Expiry',
 			},
-			veh_moyr: {
+			VEH_MOYR: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'veh_moyr',
+				field: 'VEH_MOYR',
 				comment: 'Year Model',
 			},
-			veh_make: {
+			VEH_MAKE: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'veh_make',
+				field: 'VEH_MAKE',
 				comment: 'Make',
 			},
-			veh_plno: {
+			VEH_PLNO: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'veh_plno',
+				field: 'VEH_PLNO',
 				comment: 'Plate No.',
 			},
-			veh_seno: {
+			VEH_SENO: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'veh_seno',
+				field: 'VEH_SENO',
 				comment: 'Chassis No.',
 			},
-			veh_mono: {
+			VEH_MONO: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'veh_mono',
+				field: 'VEH_MONO',
 				comment: 'Engine No.',
 			},
-			agn_code: {
+			AGN_CODE: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'agn_code',
+				field: 'AGN_CODE',
 				comment: 'Agent Code',
 			},
-			auth_no: {
+			AUTH_NO: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'auth_no',
+				field: 'AUTH_NO',
 				comment: 'Authentication No.',
 			},
-			mvfile_no: {
+			MVFILE_NO: {
 				type: DataTypes.STRING,
 				allowNull: false,
-				field: 'mvfile_no',
+				field: 'MVFILE_NO',
 				comment: 'MV File No.',
 			},
-			coc_amt: {
+			COC_AMT: {
 				type: DataTypes.DECIMAL,
 				allowNull: false,
-				field: 'coc_amt',
+				field: 'COC_AMT',
 				comment: 'Amount',
 			},
-			veh_type: {
+			VEH_TYPE: {
 				type: DataTypes.STRING,
-				allowNull: false,
-				field: 'veh_type',
+				allowNull: true,
+				field: 'VEH_TYPE',
 				comment: 'Vehicle Type',
 			},
 		},
@@ -122,6 +122,7 @@ module.exports = (sequelize, DataTypes) => {
 			modelName: 'LuCtpl',
 			tableName: 'lu_ctpl',
 			freezeTableName: true,
+			timestamps: false,
 		},
 	);
 	return LuCtpl;

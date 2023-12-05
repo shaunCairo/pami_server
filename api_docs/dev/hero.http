@@ -1,10 +1,10 @@
 @hostname = http://localhost:4000/api/v1
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
 @endpoint = /heros
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwNzQ3NDY0LCJleHAiOjE3MDA4MzM4NjR9.-JjaLZlC-1CZiNuzhPMY_qyGII45EnN6U6Fu_lWX4Lk
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwOTkxNTcyLCJleHAiOjE3MDEwNzc5NzJ9.HL_z9CEeD7Rrd71Zzy1663TFEAI0iPyNRigWqSzHfaY
 
 ### GET ALL RESOURCE
-GET {{hostname}}{{endpoint}}
+GET {{hostname}}{{endpoint}}?is_published=1
 content-type: application/json
 Authorization: {{token}}
 
@@ -47,6 +47,6 @@ Authorization: {{token}}
 }
 
 ### DELETE RESOURCE
-DELETE {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+DELETE {{hostname}}{{endpoint}}/3
 content-type: application/json
 Authorization: {{token}}

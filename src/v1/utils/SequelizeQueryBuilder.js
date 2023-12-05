@@ -5,7 +5,8 @@ class SequelizeQueryBuilder {
 		this.model = model;
 		this.reqQuery = reqQuery;
 		this.filterOptions = {};
-		this.orderOptions = [['createdAt', 'DESC']];
+		this.orderOptions = [];
+		// this.orderOptions = [['createdAt', 'DESC']];
 		this.attributesOptions = { exclude: [] };
 		this.paginationOptions = { page: 1, limit: 20 };
 	}
@@ -50,10 +51,22 @@ class SequelizeQueryBuilder {
 					qryVal = '%' + qryVal + '%';
 				}
 
+				// for dates between
+				if (opVal === 'between') {
+					const validJSONString = qryVal.replace(/'/g, '"');
+
+					// Parse the valid JSON string into an array
+					const parsedArray = JSON.parse(validJSONString);
+
+					qryVal = parsedArray;
+				}
+
 				// Build the query by constructing an object with Sequelize's Op[opVal] as the key
 				queryObj[key] = { [Op[opVal]]: qryVal };
 			}
 		}
+
+		console.log('dddddddddddddddd', queryObj);
 		this.filterOptions = queryObj;
 
 		return this;
@@ -82,8 +95,6 @@ class SequelizeQueryBuilder {
 					}
 				}
 			}
-
-			console.log('this.reqQuery.sort', orderArr);
 
 			this.orderOptions = orderArr;
 		}

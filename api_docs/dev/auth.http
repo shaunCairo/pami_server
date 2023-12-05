@@ -2,7 +2,7 @@
 #@hostname = https://pami-dev.onrender.com/api/v1
 
 @endpoint = /auth
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwMzY3NjI3LCJleHAiOjE3MDA0NTQwMjd9.I8vfUZzQC89Yu0BmCz6JSV34iACw6Sx-HyofntSveHI
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwOTkxNTcyLCJleHAiOjE3MDEwNzc5NzJ9.HL_z9CEeD7Rrd71Zzy1663TFEAI0iPyNRigWqSzHfaY
 
 ### LOGIN USER
 POST {{hostname}}{{endpoint}}/login

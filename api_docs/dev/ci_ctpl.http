@@ -1,7 +1,7 @@
 @hostname = http://localhost:4000/api/v1
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
 @endpoint = /ci_ctpl
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwNzM1Mjc1LCJleHAiOjE3MDA4MjE2NzV9.CKs2e_CVfUYWroPGQJ2Gson_Fy1ljJPQDYOOOXtlePU
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwODkyMzIzLCJleHAiOjE3MDA5Nzg3MjN9.yYWN5MIU8S4H7Pz3jSE-HfZ0a1oyju9r0ECG37xt-ac
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}
@@ -32,7 +32,7 @@ Authorization: {{token}}
     "veh_plno": "RLG863",
     "ltf_oper": "CUICO NOEL",
     "claimant": "JULIET CABALLAR",
-    "cov_desc": "DISABILITY",
+    "CovDesc": "DISABILITY",
     "res_amt": 25000,
     "pay_amt": 15000,
     "cv_dt": "1/19/2017",
@@ -77,7 +77,7 @@ Authorization: {{token}}
     "veh_plno": "RLG863",
     "ltf_oper": "CUICO NOEL",
     "claimant": "JULIET CABALLAR",
-    "cov_desc": "DISABILITY",
+    "CovDesc": "DISABILITY",
     "res_amt": 25000,
     "pay_amt": 15000,
     "cv_dt": "1/19/2017",
@@ -94,7 +94,7 @@ Authorization: {{token}}
     "veh_plno": "AYH923",
     "ltf_oper": "PIS EW, RODOLFO",
     "claimant": "ORLANDO REYES JR",
-    "cov_desc": "DISABILITY",
+    "CovDesc": "DISABILITY",
     "res_amt": 25000,
     "pay_amt": 25000,
     "cv_dt": "4/24/2017",
@@ -111,7 +111,7 @@ Authorization: {{token}}
     "veh_plno": "UYC106",
     "ltf_oper": "VILLANUEVA, JOSE ENRICO",
     "claimant": "REYMONDO ESOK",
-    "cov_desc": "DISABILITY",
+    "CovDesc": "DISABILITY",
     "res_amt": 25000,
     "pay_amt": 20000,
     "cv_dt": "2/21/2017",
@@ -128,7 +128,7 @@ Authorization: {{token}}
     "veh_plno": "RFC713",
     "ltf_oper": "ALL COUNTS TRANSPORT SERVICES CORP",
     "claimant": "ARNOLD ROTAMOLA",
-    "cov_desc": "DISABILITY",
+    "CovDesc": "DISABILITY",
     "res_amt": 25000,
     "pay_amt": 15000,
     "cv_dt": "3/28/2017",
@@ -145,7 +145,7 @@ Authorization: {{token}}
     "veh_plno": "TVZ900",
     "ltf_oper": "VILLARUEL, EDMAR",
     "claimant": "AMELIA VILLARAIZ",
-    "cov_desc": "DISABILITY",
+    "CovDesc": "DISABILITY",
     "res_amt": 25000,
     "pay_amt": 20000,
     "cv_dt": "4/6/2017",
