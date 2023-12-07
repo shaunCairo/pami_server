@@ -1,9 +1,9 @@
 const { Image: Model } = require('../models');
 const BaseService = require('./BaseService');
 
-class CustomerService extends BaseService {
+class ImageService extends BaseService {
 	Model;
-	static className = 'CustomerService';
+	static className = 'ImageService';
 	constructor() {
 		super(Model);
 
@@ -12,4 +12,4 @@ class CustomerService extends BaseService {
 	}
 }
 
-module.exports = CustomerService;
+module.exports = ImageService;

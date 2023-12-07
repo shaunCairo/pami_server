@@ -1,0 +1,40 @@
+@hostname = http://localhost:4000/api/v1
+#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+@endpoint = /claim_images
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAxODY2NDQ3LCJleHAiOjE3MDE5NTI4NDd9.BL2fk7Uy-Bs6WGosR_3ePtp9jJGMnp-WEC9zIPiN2gU
+
+
+GET {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+###
+
+GET {{hostname}}{{endpoint}}/6411c4dbf8e48cb5b3b1546f
+content-type: application/json
+Authorization: {{token}}
+
+###
+POST {{hostname}}{{endpoint}}
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "file": "092"
+}
+
+###
+PATCH {{hostname}}{{endpoint}}/6401f24b3c3d5cb4e6303ff0
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "mobileNumber": "09233",
+    "email": "email@gmail3.com",
+    "lastName": "Mil",
+    "firstName": "Ez"
+}
+
+###
+DELETE {{hostname}}{{endpoint}}/3
+content-type: application/json
+Authorization: {{token}}

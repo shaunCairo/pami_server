@@ -85,7 +85,7 @@ module.exports = (err, req, res, next) => {
 
 	let error = { ...err };
 
-	// console.log('ERROR NAME', err.name);
+	console.log('ERROR NAME', err);
 	error.message = err.message;
 	if (err.name === 'CastError') error = handleCastErrorDB(error);
 	if (err.code === 11000) error = handleDuplicateFieldsDB(error);

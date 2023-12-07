@@ -12,15 +12,6 @@ module.exports = (sequelize, DataTypes) => {
 				constraints: false,
 			});
 
-			this.belongsToMany(models.Claim, {
-				through: {
-					model: models.ImageAssociation,
-					unique: false,
-				},
-				foreignKey: 'image_id',
-				constraints: false,
-			});
-
 			this.belongsToMany(models.Gallery, {
 				through: {
 					model: models.ImageAssociation,

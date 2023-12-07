@@ -1,4 +1,4 @@
-const { Claim: Model, Image } = require('../models');
+const { Claim: Model, ClaimImage } = require('../models');
 const BaseService = require('./BaseService');
 
 class ClaimService extends BaseService {
@@ -8,10 +8,14 @@ class ClaimService extends BaseService {
 		super(Model);
 
 		this.Model = Model;
+		this.includeTo = {
+			readOne: true,
+			readAll: false,
+		};
 		this.include = [
 			{
-				model: Image,
-				as: 'images',
+				model: ClaimImage,
+				as: 'claim_images',
 				attributes: [
 					'id',
 					'public_id',
@@ -19,7 +23,6 @@ class ClaimService extends BaseService {
 					'width',
 					'height',
 				],
-				through: { attributes: [] },
 			},
 		];
 

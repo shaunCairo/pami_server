@@ -1,7 +1,7 @@
 @hostname = http://localhost:4000/api/v1
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
-@endpoint = /claim_inquiries
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5ODg1NTczLCJleHAiOjE2OTk5NzE5NzN9.xo8L1lvEnENrFhGlZclemKOj-ddw8KjnS259evQdFnY
+@endpoint = /claim_reports
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAxODY2NDQ3LCJleHAiOjE3MDE5NTI4NDd9.BL2fk7Uy-Bs6WGosR_3ePtp9jJGMnp-WEC9zIPiN2gU
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}
@@ -14,7 +14,7 @@ content-type: application/json
 Authorization: {{token}}
 
 ### GET SINGLE RESOURCE
-GET {{hostname}}{{endpoint}}/7
+GET {{hostname}}{{endpoint}}/5
 content-type: application/json
 Authorization: {{token}}
 

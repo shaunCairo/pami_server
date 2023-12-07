@@ -1,0 +1,59 @@
+const BaseController = require('./BaseController');
+const AppError = require('../utils/appError.js');
+const { jsonResponse } = require('../utils/responseBuilder');
+const cloudinary = require('../../../config/cloudinary.js');
+
+class ImageController extends BaseController {
+	async create(req, res, next) {
+		if (!req.file) {
+			return next(new AppError('File is required', 404));
+		}
+
+		const BaseService = new this.BaseService();
+		const image_res = await cloudinary.uploader.upload(req.file.path, {
+			upload_preset:
+				process.env.CLOUDINARY_IMAGE_PRESET || 'development_preset',
+		});
+
+		image_res.claim_id = req.body.claim_id;
+		const data = await BaseService.create(image_res);
+
+		const statusCode = 200;
+		res.status(statusCode).json(
+			jsonResponse(statusCode, 'Resource created successfully.', data),
+		);
+		return;
+	}
+
+	async delete(req, res, next) {
+		const id = req.params.id;
+		const BaseService = new this.BaseService();
+
+		const data = await BaseService.delete(id);
+
+		if (!data) {
+			return next(
+				new AppError('The requested resource was not found', 404),
+			);
+		}
+
+		// delete the association of the image_id given to any models
+		const ImageAssociationService = new this.ImageAssociationService();
+		await ImageAssociationService.deleteImageAssoc(id);
+
+		await cloudinary.uploader.destroy(data.public_id);
+
+		const statusCode = 200;
+
+		res.status(statusCode).json(
+			jsonResponse(
+				statusCode,
+				'Resource deleted successfully.',
+				undefined,
+			),
+		);
+		return;
+	}
+}
+
+module.exports = ImageController;
