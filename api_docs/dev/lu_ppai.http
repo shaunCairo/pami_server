@@ -1,7 +1,7 @@
-@hostname = http://localhost:4000/api/v1
-#@hostname = https://demo-smatera.bellyeah.jp/api/v1
+#@hostname = http://localhost:4000/api/v1
+@hostname = https://pami-dev.onrender.com/api/v1
 @endpoint = /lu_ppai
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwODkyMzIzLCJleHAiOjE3MDA5Nzg3MjN9.yYWN5MIU8S4H7Pz3jSE-HfZ0a1oyju9r0ECG37xt-ac
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAyMDUwNDAyLCJleHAiOjE3MDIxMzY4MDJ9.V7aItlDSJaCWE0PzCZRlidd5oJWFH3BpEJ5NOffJqeU
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}
@@ -24,25 +24,25 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-    "COC_DATE": "11/13/2017",
-    "COC_CTRC": "CAR027719-TRKN112017",
-    "LTF_CASE": "98BC334",
-    "LTF_OPER": "ACONG, FELICIDAD",
-    "LTF_ADDR": "32 DOMINICAN HILL, BAGUIO CITY",
+    "COC_DATE": "11/20/2017",
+    "COC_CTRC": "CAR025022-TRL1112017",
+    "LTF_CASE": "04BC040",
+    "LTF_OPER": "DELA CRUZ, BERNARDO",
+    "LTF_ADDR": "ALAPANG LA TRINIDAD BENGUET",
     "LTF_ORIG": "BAGUIO CITY",
-    "LTF_DEST": "TO ANY PT. IN CAR",
+    "LTF_DEST": "ANY PT. IN CAR",
     "LTF_VIA": "()",
-    "COC_PEFR": "11/13/2017",
-    "COC_PETO": "11/13/2018",
-    "VEH_MOYR": 2015,
+    "COC_PEFR": "11/20/2017",
+    "COC_PETO": "11/20/2018",
+    "VEH_MOYR": "NA",
     "VEH_MAKE": "MITSUBISHI",
-    "VEH_PLNO": "ABN9917",
-    "VEH_SENO": "PAEVB5MLFFB001860",
-    "VEH_MONO": "4D56AAL9352",
-    "MVFILE_NO": "140400000058146",
+    "VEH_PLNO": "AYR442",
+    "VEH_SENO": "PAEVB5NJ15B 006698",
+    "VEH_MONO": "4D56A-P6862",
+    "MVFILE_NO": "140400000027151",
     "AUTH_NO": "VALID",
     "AGN_CODE": "I006",
-    "COC_AMT": 0
+    "COC_AMT": 100
   }
 
 

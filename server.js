@@ -20,12 +20,12 @@ process.on('uncaughtException', (err) => {
 		// await db.Blog.sync({ alter: true });
 		// await db.Branch.sync({ alter: true });
 		// await db.Gallery.sync({ alter: true });
-		// await db.Claim.sync({ alter: true });
+		//await db.Claim.sync({ alter: true });
 		// await db.LuPpai.sync({ alter: true });
 		// await db.LuCtpl.sync({ alter: true });
 		// await db.CiPpai.sync({ alter: true });
 		// await db.CiCtpl.sync({ alter: true });
-		// await db.ClaimImage.sync({ alter: true });
+		//await db.ClaimImage.sync({ alter: true });
 	}
 
 	// if (process.env.NODE_ENV === 'production') {
@@ -42,6 +42,7 @@ process.on('uncaughtException', (err) => {
 	// 	await db.LuCtpl.sync({ force: true });
 	// 	await db.CiPpai.sync({ force: true });
 	// 	await db.CiCtpl.sync({ force: true });
+	// await db.ClaimImage.sync({ alter: true });
 	// }
 
 	const port = process.env.PORT || 5000;

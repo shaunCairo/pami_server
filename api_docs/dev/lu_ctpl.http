@@ -1,7 +1,7 @@
-@hostname = http://localhost:4000/api/v1
-#@hostname = https://pami-dev.onrender.com/api/v1
+#@hostname = http://localhost:4000/api/v1
+@hostname = https://pami-dev.onrender.com/api/v1
 @endpoint = /lu_ctpl
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzAwODkyMzIzLCJleHAiOjE3MDA5Nzg3MjN9.yYWN5MIU8S4H7Pz3jSE-HfZ0a1oyju9r0ECG37xt-ac
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAyMDUwNDAyLCJleHAiOjE3MDIxMzY4MDJ9.V7aItlDSJaCWE0PzCZRlidd5oJWFH3BpEJ5NOffJqeU
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}
@@ -24,24 +24,24 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-    "COC_DATE": "11/20/2017",
-    "TPLNUM": "CAR063626",
-    "COC_CTRC": "CAR024220-JEPN032017",
-    "LTF_CASE": "2000011476",
-    "LTF_OPER": "DUMLAO, IRENEO",
-    "LTF_ADDR": "PALAQUIO, BUCAY, ABRA",
+  "COC_DATE": "11/20/2017",
+    "TPLNUM": "CAR064956",
+    "COC_CTRC": "CAR024523-SEDN032017",
+    "LTF_CASE": "200001609",
+    "LTF_OPER": "QUITENG, MARY",
+    "LTF_ADDR": "2 PUROK 6 PINSAO PILOT PROJECT, BAGUIO CITY",
     "COC_PEFR": "11/20/2017",
     "COC_PETO": "11/20/2018",
-    "VEH_MOYR": 2000,
+    "VEH_MOYR": 2013,
     "VEH_MAKE": "ISUZU",
-    "VEH_PLNO": "AYG363",
-    "VEH_SENO": "NKR58L-7110194",
-    "VEH_MONO": "4BD1-136157",
+    "VEH_PLNO": "AYV143",
+    "VEH_SENO": "PABTBR54FD2073195",
+    "VEH_MONO": "4JA1M40651",
     "AGN_CODE": "I006",
     "AUTH_NO": "VALID",
-    "MVFILE_NO": "131200000195469",
+    "MVFILE_NO": "142000000028657",
     "COC_AMT": 100
-  }
+}
 
 ### UPDATE RESOURCE
 PATCH {{hostname}}{{endpoint}}/1
