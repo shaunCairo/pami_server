@@ -4,11 +4,12 @@ const auth = require('../middlewares/auth');
 const router = express.Router();
 const upload = require('../middlewares/multer.js');
 const catchUnknownError = require('../utils/catchUnknownError.js');
+const ImageHelper = require('../helpers/ImageHelper');
 
 const MainService = require('../services/ClaimImageService');
 const _MainController = require('../controllers/ClaimImageController');
 
-const MainController = new _MainController([MainService]);
+const MainController = new _MainController([MainService], [ImageHelper]);
 
 const prefix = '/claim_images';
 
