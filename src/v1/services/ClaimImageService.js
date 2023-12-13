@@ -1,5 +1,7 @@
 const { ClaimImage: Model } = require('../models');
 const BaseService = require('./BaseService');
+const ImageHelper = require('../helpers/ImageHelper');
+const cloudinary = require('../../../config/cloudinary');
 
 class ClaimImageService extends BaseService {
 	Model;
@@ -9,6 +11,7 @@ class ClaimImageService extends BaseService {
 
 		this.Model = Model;
 		this.include = [];
+		this.ImageHelper = ImageHelper;
 	}
 
 	/**
@@ -17,7 +20,13 @@ class ClaimImageService extends BaseService {
 	 * @returns boolean
 	 */
 	async deleteImageAssoc(id) {
-		const _data = this.Model.destroy({
+		const to_be_deleted_images = await this.Model.findAll({
+			where: {
+				claim_id: id, // specify the ID or conditions for the record you want to delete permanently
+			},
+		});
+
+		const _data = await this.Model.destroy({
 			where: {
 				claim_id: id, // specify the ID or conditions for the record you want to delete permanently
 			},
@@ -25,6 +34,16 @@ class ClaimImageService extends BaseService {
 
 		if (!_data) {
 			return false;
+		}
+
+		for (let img of to_be_deleted_images) {
+			if (process.env.UPLOAD_TYPE === 'server') {
+				const ImageHelper = new this.ImageHelper();
+				const path = new URL(img.secure_url).pathname;
+				ImageHelper.delete('public' + path);
+			} else {
+				await cloudinary.uploader.destroy(img.public_id);
+			}
 		}
 
 		return _data;

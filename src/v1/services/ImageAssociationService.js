@@ -17,7 +17,7 @@ class ImageAssociationService extends BaseService {
 	 * @returns boolean
 	 */
 	async deleteImageAssoc(id) {
-		const _data = this.Model.destroy({
+		const _data = await this.Model.destroy({
 			where: {
 				image_id: id, // specify the ID or conditions for the record you want to delete permanently
 			},

@@ -66,8 +66,8 @@ class ImageController extends BaseController {
 		}
 
 		// delete the association of the image_id given to any models
-		const ImageAssociationService = new this.ImageAssociationService();
-		await ImageAssociationService.deleteImageAssoc(id);
+		// const ImageAssociationService = new this.ImageAssociationService();
+		// await ImageAssociationService.deleteImageAssoc(id);
 
 		if (process.env.UPLOAD_TYPE === 'server') {
 			const ImageHelper = new this.ImageHelper();
