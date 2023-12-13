@@ -4,15 +4,16 @@ const auth = require('../middlewares/auth');
 const router = express.Router();
 const upload = require('../middlewares/multer.js');
 const catchUnknownError = require('../utils/catchUnknownError.js');
+const ImageHelper = require('../helpers/ImageHelper');
 
 const MainService = require('../services/ImageService');
 const ImageAssociationService = require('../services/ImageAssociationService');
 const _MainController = require('../controllers/ImageController');
 
-const MainController = new _MainController([
-	MainService,
-	ImageAssociationService,
-]);
+const MainController = new _MainController(
+	[MainService, ImageAssociationService],
+	[ImageHelper],
+);
 
 const prefix = '/images';
 

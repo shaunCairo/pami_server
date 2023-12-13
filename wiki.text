@@ -1,3 +1,16 @@
+** ENV **
+# UPLOAD_TYPE = server || cloud
+UPLOAD_TYPE=server
+
+.env you can choose upload type if server it will uploaded on the server itself
+if cloud it will be uploaded in cloudenary by default cloud 
+use server on development
+
+Note: if you choose UPLOAD_TYPE=server, you need to provide WEB_ORIGIN ENV VARIABLE
+Ex: WEB_ORIGIN=http://localhost:4000 || WEB_ORIGIN=https://example.com
+
+** /ENV **
+
 
 ** IMAGES **
 if you want to add image in a model
