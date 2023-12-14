@@ -66,7 +66,6 @@ class SequelizeQueryBuilder {
 			}
 		}
 
-		console.log('dddddddddddddddd', queryObj);
 		this.filterOptions = queryObj;
 
 		return this;

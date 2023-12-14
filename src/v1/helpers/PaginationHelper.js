@@ -7,7 +7,6 @@
 
 class PaginationHelper {
 	constructor(Model, data, query) {
-		console.log('QUERY: ', query);
 		this.Model = Model;
 		this.data = data;
 		this.query = query;
