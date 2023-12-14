@@ -16,6 +16,8 @@ class CustomerController extends BaseController {
 	}
 
 	async login(req, res, next) {
+		const abilities = require('../utils/abilities');
+
 		const { email, password } = req.body;
 
 		if (!email || !password) {
@@ -33,6 +35,8 @@ class CustomerController extends BaseController {
 		if (!user) {
 			return next(new AppError('Invalid login credentials', 401));
 		}
+
+		user.user.abilities = abilities[user.user.role];
 
 		const statusCode = 200;
 		res.status(statusCode).json(
