@@ -99,10 +99,10 @@ module.exports = (err, req, res, next) => {
 	if (err.expose) error = handleBadJSONFormat(error);
 
 	if (err.name === 'JsonWebTokenError')
-		error = new AppError(err.message, 401);
+		error = new AppError(err.message, 403);
 
 	if (err.name === 'TokenExpiredError') {
-		error = new AppError('Expired Token', 401);
+		error = new AppError('Expired Token', 403);
 	}
 
 	if (process.env.NODE_ENV === 'development') {

@@ -40,7 +40,7 @@ exports.protect = catchUnknownError(async (req, res, next) => {
 		return next(
 			new AppError(
 				'The user belonging to this token does no longer exist.',
-				401,
+				403,
 			),
 		);
 	}
@@ -49,7 +49,7 @@ exports.protect = catchUnknownError(async (req, res, next) => {
 		return next(
 			new AppError(
 				'User recently changed password! Please log in again.',
-				401,
+				403,
 			),
 		);
 	}
