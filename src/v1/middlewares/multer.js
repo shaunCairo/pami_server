@@ -2,7 +2,7 @@ const multer = require('multer');
 const path = require('path');
 const AppError = require('../utils/appError.js');
 const { v4: uuidv4 } = require('uuid');
-
+const fs = require('fs');
 // Multer config
 // module.exports = multer({
 // 	storage: multer.diskStorage({
@@ -33,7 +33,9 @@ let storage = {};
 if (process.env.UPLOAD_TYPE === 'server') {
 	storage = {
 		destination: (req, file, cb) => {
-			cb(null, 'public/tmp/img/');
+			const path = 'public/tmp/img/';
+			fs.mkdirSync(path, { recursive: true });
+			cb(null, path);
 		},
 		filename: (req, file, cb) => {
 			const public_id = uuidv4();

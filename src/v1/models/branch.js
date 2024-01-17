@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
 	Branch.init(
 		{
 			name: { type: DataTypes.STRING, allowNull: false },
-			lat: { type: DataTypes.STRING, allowNull: false },
-			lng: { type: DataTypes.STRING, allowNull: false },
+			lat: { type: DataTypes.DOUBLE, allowNull: false },
+			lng: { type: DataTypes.DOUBLE, allowNull: false },
 			contact_numbers_json: { type: DataTypes.TEXT, allowNull: true },
 			contact_person_json: { type: DataTypes.TEXT, allowNull: true },
 			address: { type: DataTypes.TEXT, allowNull: true },
