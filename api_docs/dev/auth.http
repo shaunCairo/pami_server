@@ -15,7 +15,7 @@ Authorization: {{token}}
 # }
 
 {
-	"email": "dev@gmail.com",
+	"email": "pami_super_admin@gmail.com",
 	"password": "password"
 }
 

@@ -25,6 +25,12 @@ class ImageHelper {
 	}
 
 	moveFile(source_file, destination) {
+		const destinationFolder = 'public/img';
+
+		if (!fs.existsSync(destinationFolder)) {
+			fs.mkdirSync(destinationFolder, { recursive: true });
+		}
+
 		fs.rename(source_file, destination, (err) => {
 			if (err) {
 				console.error(`Error moving file: ${err}`);

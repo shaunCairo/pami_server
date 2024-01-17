@@ -47,6 +47,15 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'image_id',
 				constraints: false,
 			});
+
+			this.belongsToMany(models.WebApp, {
+				through: {
+					model: models.ImageAssociation,
+					unique: false,
+				},
+				foreignKey: 'image_id',
+				constraints: false,
+			});
 		}
 	}
 	Image.init(
