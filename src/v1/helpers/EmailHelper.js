@@ -4,9 +4,8 @@ const path = require('path');
 const viewpath = path.join(__dirname, '../views/');
 
 class Email {
-	constructor(user, url) {
-		this.to = user.email;
-		this.url = url;
+	constructor(to) {
+		this.to = to;
 		this.from = process.env.EMAIL_FROM_NAME;
 	}
 
@@ -61,22 +60,9 @@ class Email {
 		await this.newTransport().sendMail(mailOptions);
 	}
 
-	async sendPasswordReset(url) {
-		const content = { name: this.to, url };
-		const subject = 'Your password reset token (valid for only 10 minutes)';
-		const template = 'password_reset';
-		await this.execute(template, subject, content);
-	}
-
-	async sendVerificationEmail(token, api_key, activation_url) {
-		const content = {
-			api_key,
-			token,
-			activation_url,
-			name: this.to,
-		};
-		const subject = 'Api key verification';
-		const template = 'verify_key';
+	async sendPlainEmail(content) {
+		const subject = 'Email from website (pami.ph)';
+		const template = 'plain';
 		await this.execute(template, subject, content);
 	}
 }

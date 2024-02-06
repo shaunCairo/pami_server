@@ -1,0 +1,16 @@
+@hostname = http://localhost:4000/api/v1
+@endpoint = /email
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk5Nzk3MzQ4LCJleHAiOjE2OTk4ODM3NDh9.1Pf-gio2x7C1-O5tiVHEQ4BSNj4Zj2uP7c9M04U2Ajs
+
+### ADD/STORE RESOURCE
+POST {{hostname}}{{endpoint}}/send_email
+content-type: application/json
+Authorization: {{token}}
+
+{
+   "full_name": "Eugene Paul Badato",
+   "email": "badatoeugenepaulm@gmail.com",
+   "number": "099999999999",
+   "subject": "This is a subject",
+   "message": "Message"
+}
