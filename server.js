@@ -36,7 +36,7 @@ process.on('uncaughtException', (err) => {
 		// 	await db.GovPartner.sync({ force: true });
 		// 	await db.Hero.sync({ force: true });
 		// 	await db.Blog.sync({ force: true });
-		await db.Branch.sync({ alter: true });
+		// await db.Branch.sync({ alter: true });
 		// 	await db.Gallery.sync({ force: true });
 		// 	await db.Claim.sync({ force: true });
 		// 	await db.LuPpai.sync({ force: true });
@@ -44,7 +44,7 @@ process.on('uncaughtException', (err) => {
 		// 	await db.CiPpai.sync({ force: true });
 		// 	await db.CiCtpl.sync({ force: true });
 		// await db.ClaimImage.sync({ alter: true });
-		await db.WebApp.sync({ alter: true });
+		// await db.WebApp.sync({ alter: true });
 	}
 
 	const port = process.env.PORT || 5000;
