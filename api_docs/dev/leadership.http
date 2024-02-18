@@ -1,7 +1,7 @@
 @hostname = http://localhost:4000/api/v1
 #@hostname = https://demo-smatera.bellyeah.jp/api/v1
-@endpoint = /government_partners
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA3ODc0MTI1LCJleHAiOjE3MDc5NjA1MjV9.5Wd_EW5BPO51UVpd6P96yDzgAFwsnJfCjR23Y4P2xEU
+@endpoint = /leaderships
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA3OTY0Nzk5LCJleHAiOjE3MDgwNTExOTl9.VGRjX3xacGcsGz8y2kCS0nhbscyZAX7Q7ABGSUtPiLM
 
 ### GET ALL RESOURCE
 GET {{hostname}}{{endpoint}}

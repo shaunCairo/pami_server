@@ -18,7 +18,7 @@ process.on('uncaughtException', (err) => {
 		// await db.GovPartner.sync({ alter: true });
 		// await db.Hero.sync({ alter: true });
 		// await db.Blog.sync({ alter: true });
-		// await db.Branch.sync({ force: true });
+		// await db.Branch.sync({ alter: true });
 		// await db.Gallery.sync({ alter: true });
 		// await db.Claim.sync({ alter: true });
 		// await db.LuPpai.sync({ alter: true });
@@ -26,7 +26,9 @@ process.on('uncaughtException', (err) => {
 		// await db.CiPpai.sync({ alter: true });
 		// await db.CiCtpl.sync({ alter: true });
 		// await db.ClaimImage.sync({ alter: true });
-		//await db.WebApp.sync({ alter: true });
+		// await db.WebApp.sync({ alter: true });
+		// await db.Member.sync({ alter: true });
+		// await db.Leadership.sync({ alter: true });
 	}
 
 	if (process.env.NODE_ENV === 'production') {
@@ -36,7 +38,6 @@ process.on('uncaughtException', (err) => {
 		// 	await db.GovPartner.sync({ force: true });
 		// 	await db.Hero.sync({ force: true });
 		// 	await db.Blog.sync({ force: true });
-		// await db.Branch.sync({ alter: true });
 		// 	await db.Gallery.sync({ force: true });
 		// 	await db.Claim.sync({ force: true });
 		// 	await db.LuPpai.sync({ force: true });
@@ -44,7 +45,10 @@ process.on('uncaughtException', (err) => {
 		// 	await db.CiPpai.sync({ force: true });
 		// 	await db.CiCtpl.sync({ force: true });
 		// await db.ClaimImage.sync({ alter: true });
-		// await db.WebApp.sync({ alter: true });
+		await db.Branch.sync({ alter: true });
+		await db.WebApp.sync({ alter: true });
+		await db.Member.sync({ alter: true });
+		await db.Leadership.sync({ alter: true });
 	}
 
 	const port = process.env.PORT || 5000;
