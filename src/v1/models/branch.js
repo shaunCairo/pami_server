@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
 			contact_numbers_json: { type: DataTypes.TEXT, allowNull: true },
 			contact_person_json: { type: DataTypes.TEXT, allowNull: true },
 			address: { type: DataTypes.TEXT, allowNull: true },
+			hierarchy: { type: DataTypes.STRING, allowNull: true },
+			main_email: {
+				type: DataTypes.STRING,
+				allowNull: true,
+			},
 		},
 		{
 			sequelize: sequelize,

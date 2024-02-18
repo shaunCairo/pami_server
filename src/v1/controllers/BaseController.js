@@ -72,6 +72,7 @@ class BaseController {
 			res.status(statusCode).json(
 				jsonResponse(statusCode, 'No data available.', data),
 			);
+			return;
 		}
 
 		res.status(statusCode).json(

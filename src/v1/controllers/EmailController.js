@@ -5,9 +5,17 @@ const Email = require('../helpers/EmailHelper.js');
 
 class EmailController extends BaseController {
 	async sendEmail(req, res, next) {
-		const { full_name, email, number, subject, message } = req.body;
+		const { full_name, email, contact, subject, message, recipient } =
+			req.body;
 
-		if (!full_name || !email || !number || !subject || !message) {
+		if (
+			!full_name ||
+			!email ||
+			!contact ||
+			!subject ||
+			!message ||
+			!recipient
+		) {
 			return next(
 				new AppError(
 					'Your request seems to be incorrect or missing.',
@@ -16,7 +24,7 @@ class EmailController extends BaseController {
 			);
 		}
 
-		await new Email(email).sendPlainEmail(req.body);
+		await new Email(recipient).sendPlainEmail(req.body);
 
 		const statusCode = 200;
 		res.status(statusCode).json(

@@ -21,6 +21,9 @@ module.exports = (sequelize, DataTypes) => {
 	WebApp.init(
 		{
 			mission_vision_json: { type: DataTypes.TEXT, allowNull: true },
+			coverage_json: { type: DataTypes.TEXT, allowNull: true },
+			death_benefits_json: { type: DataTypes.TEXT, allowNull: true },
+			medical_benefits_json: { type: DataTypes.TEXT, allowNull: true },
 		},
 		{
 			sequelize: sequelize,
