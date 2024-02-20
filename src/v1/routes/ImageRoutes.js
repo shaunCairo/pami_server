@@ -47,7 +47,7 @@ router.post(
 router.delete(
 	`${prefix}/:id`,
 	auth.protect,
-	auth.restrictedTo('admin'),
+	auth.restrictedTo('super_admin'),
 	catchUnknownError(MainController.delete.bind(MainController)),
 );
 
