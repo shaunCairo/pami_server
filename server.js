@@ -45,10 +45,10 @@ process.on('uncaughtException', (err) => {
 		// 	await db.CiPpai.sync({ force: true });
 		// 	await db.CiCtpl.sync({ force: true });
 		// await db.ClaimImage.sync({ alter: true });
-		await db.Branch.sync({ alter: true });
-		await db.WebApp.sync({ alter: true });
-		await db.Member.sync({ alter: true });
-		await db.Leadership.sync({ alter: true });
+		// await db.Branch.sync({ force: true });
+		// await db.WebApp.sync({ force: true });
+		// await db.Member.sync({ alter: true });
+		// await db.Leadership.sync({ alter: true });
 	}
 
 	const port = process.env.PORT || 5000;
